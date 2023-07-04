@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Sorting Visualizer</title>
+   <link href="styles/sorting.css" rel="stylesheet" />
+   <link rel="icon" href="images/icon.jpg" />
+</head>
+
+<body>
+   <!-- Main Header Div. All elements in Header are in this div-->
+   <div class="header">
+      <!-- <img src="images/icon.jpg" style="width:4%; height:auto;"> -->
+      <!-- Dropdown div. All Sorting Methods are in this container-->
+      <div class="sortBox dropdown" onclick="dropdown_bar()">
+         <div id="dropdown-text">Select Sort Type</div>
+         <img src="images/arrow.jpg" style="width:2vh; height:auto;">
+         <ul class="dropdown-content">
+            <!-- Dropdown content. Here Stop propagation is used to stop bubbling Effect. -->
+            <li onclick="event.stopPropagation(); sortSelection('Bubble Sort')">Bubble Sort</li>
+            <li onclick="event.stopPropagation(); sortSelection('Insertion Sort')">Insertion Sort</li>
+            <li onclick="event.stopPropagation(); sortSelection('Merge Sort')">Merge Sort</li>
+            <li onclick="event.stopPropagation(); sortSelection('Quick Sort')">Quick Sort</li>
+            <li onclick="event.stopPropagation(); sortSelection('Selection Sort')">Selection Sort</li>
+         </ul>
+      </div>
+      <!-- Dropdown Div ended-->
+      <!--Visualisation Speed Slider-->
+      <div class="slidecontainer">
+         <div class="slider-text"><strong>Speed</strong> </div>
+         <input type="range" label="arr" min="50" max="398" class="slider " id="speed-slider" oninput="speed()">
+      </div>
+      <!-- Array Size Decider slider-->
+      <div class="slidecontainer">
+         <div class="slider-text"><strong>Size</strong> </div>
+         <!-- Here we used oninput event-->
+         <input type="range" min="5" max="250" value="120" class="slider" id="size-slider" oninput="newArray()">
+      </div>
+      <!-- Array size decider slider ended-->
+      <button id="array-generator">Randomize</button>
+      <button id="start-button">Start</button>
+      <button id="stop-button">Stop</button>
+   </div>
+   <!-- Header Div Ended-->
+
+   <div id="bar-container"></div>
+
+   <!-- Github and Linkedin Links-->
+   
+   <!-- Footer Div Started -->
+   <div id="footer">
+      <a class="git" href="https://github.com/sumit0408" target="_blank"><img src="images/github.png"></a>
+      <h1 id="foot">SORTING VISUALIZER</h1>
+      <a class="linked" href="https://www.linkedin.com/in/sumit-singh-00594a274/" target="_blank"><img src="images/linkedin.png"></a>
+   </div>
+
+   <!-- Footer Div Ended -->
+ 
+   <script src="scripts/quickSort.js"></script>
+   <script src="scripts/mergeSort.js"></script>
+   <script src="scripts/insertionSort.js"></script>
+   <script src="scripts/bubbleSort.js"></script>
+   <script src="scripts/selectionSort.js"></script>
+   <script src="scripts/sorting.js"></script>
+
+</body>
+</html>
